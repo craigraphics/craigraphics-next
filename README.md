@@ -67,7 +67,6 @@ To build the application for production:
 
 ```
 yarn build
-
 ```
 
 or
