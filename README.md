@@ -1,45 +1,85 @@
-# Material UI - Next.js App Router example in TypeScript
+# Craigraphics
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with Material UI installed.
+## Introduction
 
-## How to use
+Craigraphics is a modern web application built using Next.js, TypeScript, and Material-UI (MUI) 5. This project combines the robustness of Next.js with the flexibility of TypeScript and the aesthetic appeal of MUI 5 to deliver a unique user experience.
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+## Features
 
-<!-- #default-branch-switch -->
+- Next.js for server-side rendering and static site generation.
+- TypeScript for type-safe code.
+- Material-UI 5 for a modern, responsive UI design.
 
-```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/material-ui-nextjs-ts
-cd material-ui-nextjs-ts
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js (version 12 or later)
+- Yarn or npm (as your package manager)
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+
+```
+   git clone [repository-url]
 ```
 
-Install it and run:
+2. Navigate to the project directory:
 
-```bash
+```
+cd craigraphics-nextjs-ts
+```
+
+3. Install dependencies:
+
+```
+yarn install
+```
+
+or
+
+```
 npm install
+```
+
+## Running the Application
+
+After installing the dependencies, you can start the application in development mode:
+
+```
+yarn dev
+```
+
+or
+
+```
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at `http://localhost:3000`.
 
-or:
+## Building for Production
 
-<!-- #default-branch-switch -->
+To build the application for production:
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-nextjs-ts)
+```
+yarn build
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/material-ui-nextjs-ts)
+```
 
-## Learn more
+or
 
-To learn more about this example:
+```
+npm run build
+```
 
-- [Next.js documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
+## Contributing
 
-## What's next?
+Contributions to Craigraphics are always welcome. Please read our contributing guidelines before submitting a pull request.
 
-<!-- #default-branch-switch -->
+## License
 
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+This project is licensed under the [MIT License](LICENSE).
