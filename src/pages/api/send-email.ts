@@ -23,8 +23,8 @@ export default async (
   const { email, message }: RequestBody = req.body;
 
   const msg = {
-    to: process.env.fromMail!,
-    from: process.env.toMail!,
+    to: process.env.toMail!,
+    from: process.env.fromMail!,
     subject: "New Message from craigraphics.com",
     text: email + " " + message,
   };
