@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import sgMail from "@sendgrid/mail";
 
-sgMail.setApiKey(process.env.sendGridAPIKey);
+sgMail.setApiKey(process.env.sendGridAPIKey!);
 
 type RequestBody = {
   email: string;
@@ -23,8 +23,8 @@ export default async (
   const { email, message }: RequestBody = req.body;
 
   const msg = {
-    to: process.env.fromMail,
-    from: process.env.toMail,
+    to: process.env.fromMail!,
+    from: process.env.toMail!,
     subject: "New Message from craigraphics.com",
     text: email + " " + message,
   };

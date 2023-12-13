@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, FormEvent, FC } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -8,7 +9,6 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import LinearProgress from "@mui/material/LinearProgress";
 import Link from "@mui/material/Link";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const EmailForm: FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -82,7 +82,7 @@ const EmailForm: FC = () => {
             width: "100%",
             zIndex: 9000,
           }}
-          color="tertiary"
+          color="secondary"
         />
       )}
       {(isSuccess || isError) && (
@@ -113,7 +113,7 @@ const EmailForm: FC = () => {
         <ReCAPTCHA
           ref={recaptchaRef}
           size="invisible"
-          sitekey={process.env.reCAPTCHAKey}
+          sitekey={process.env.reCAPTCHAKey!}
           onChange={onReCAPTCHAChange}
         />
         <TextField
@@ -161,7 +161,7 @@ const EmailForm: FC = () => {
           type="submit"
           variant="contained"
           disabled={isSuccess}
-          color="tertiary"
+          color="secondary"
         >
           Send
         </Button>
