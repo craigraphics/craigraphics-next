@@ -113,7 +113,7 @@ const EmailForm: FC = () => {
         <ReCAPTCHA
           ref={recaptchaRef}
           size="invisible"
-          sitekey={process.env.reCAPTCHAKey!}
+          sitekey={process.env.NEXT_PUBLIC_reCAPTCHAKey!}
           onChange={onReCAPTCHAChange}
         />
         <TextField
