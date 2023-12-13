@@ -1,0 +1,41 @@
+{
+  "name": "material-ui-nextjs-ts",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@sendgrid/mail": "^8.1.0",
+    "@types/react-google-recaptcha": "^2.1.8",
+    "i18next": "^23.7.8",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "next": "latest",
+    "next-i18next": "^15.1.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-google-recaptcha": "^3.1.0",
+    "react-i18next": "^13.5.0",
+    "styled-components": "^6.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/nodemailer": "^6.4.14",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "prettier": "^3.1.0",
+    "typescript": "latest"
+  }
+}
