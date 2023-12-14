@@ -14,7 +14,7 @@ Craigraphics is a modern web application built using Next.js, TypeScript, and Ma
 
 Before you begin, ensure you have the following installed:
 
-- Node.js (version 12 or later)
+- Node.js (version 18 or later)
 - Yarn or npm (as your package manager)
 
 ## Installation
