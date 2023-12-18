@@ -1,5 +1,7 @@
 "use client";
+
 import React, { useState, useRef, FormEvent, FC } from "react";
+import { observer } from "mobx-react";
 import ReCAPTCHA from "react-google-recaptcha";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -9,8 +11,13 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import LinearProgress from "@mui/material/LinearProgress";
 import Link from "@mui/material/Link";
+import { themeStore } from "@/store/ThemeStore";
+import {
+  dark as darkTheme,
+  light as lightTheme,
+} from "@/components/ThemeRegistry/colorValues";
 
-const EmailForm: FC = () => {
+const EmailForm: FC = observer(() => {
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [isSending, setIsSending] = useState<boolean>(false);
@@ -19,6 +26,7 @@ const EmailForm: FC = () => {
   const [responseMessage, setResponseMessage] = useState<string>("");
   const [token, setToken] = useState<string>("");
   const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const theme = themeStore.theme === "dark" ? darkTheme : lightTheme;
 
   const resetForm = () => {
     setEmail("");
@@ -119,6 +127,7 @@ const EmailForm: FC = () => {
         <TextField
           label="Email"
           type="email"
+          name="email"
           fullWidth
           required
           margin="normal"
@@ -127,6 +136,7 @@ const EmailForm: FC = () => {
         />
         <TextField
           label="Message"
+          name="message"
           multiline
           rows={4}
           fullWidth
@@ -135,13 +145,16 @@ const EmailForm: FC = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <Typography variant="caption" color="#b7b7b7">
+        <Typography
+          variant="caption"
+          color={themeStore.theme === "dark" ? "white" : theme.primary.dark}
+        >
           <p>
             This site is protected by reCAPTCHA and the Google{" "}
             <Link
               href="https://policies.google.com/privacy"
               target="_blank"
-              color="secondary"
+              color={themeStore.theme === "dark" ? "secondary" : "primary"}
             >
               Privacy Policy
             </Link>{" "}
@@ -149,7 +162,7 @@ const EmailForm: FC = () => {
             <Link
               href="https://policies.google.com/terms"
               target="_blank"
-              color="secondary"
+              color={themeStore.theme === "dark" ? "secondary" : "primary"}
             >
               Terms of Service
             </Link>{" "}
@@ -161,13 +174,13 @@ const EmailForm: FC = () => {
           type="submit"
           variant="contained"
           disabled={isSuccess}
-          color="secondary"
+          color={themeStore.theme === "dark" ? "secondary" : "primary"}
         >
           Send
         </Button>
       </form>
     </>
   );
-};
+});
 
 export default EmailForm;

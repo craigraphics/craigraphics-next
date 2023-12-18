@@ -5,7 +5,7 @@ import LinearProgress, {
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import { colorValues } from "@/components/ThemeRegistry/colorValues";
+import { dark as themeColor } from "@/components/ThemeRegistry/colorValues";
 
 const StyledLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 15,
@@ -13,15 +13,15 @@ const StyledLinearProgress = styled(LinearProgress)(({ theme }) => ({
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor:
       theme.palette.mode === "light"
-        ? colorValues.primary.light
-        : colorValues.secondary.dark,
+        ? themeColor.primary.light
+        : themeColor.secondary.dark,
   },
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 0,
     backgroundColor:
       theme.palette.mode === "light"
-        ? colorValues.tertiary.main
-        : colorValues.tertiary.main,
+        ? themeColor.tertiary.main
+        : themeColor.tertiary.main,
   },
 }));
 
@@ -35,7 +35,7 @@ const BorderLinearProgress = (
     <Box sx={{ minWidth: 35, position: "absolute", ml: 1, fontWeight: "600" }}>
       <Typography
         variant="body2"
-        color={colorValues.primary.dark}
+        color={themeColor.primary.dark}
       >{`${Math.round(props.value)}`}</Typography>
     </Box>
   </Box>

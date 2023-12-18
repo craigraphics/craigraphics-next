@@ -16,7 +16,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ name, value }) => (
       </Typography>
     </Grid>
     <Grid xsOffset={0} smOffset={0} mdOffset={1} xs={6} sm={5} md={4}>
-      <Box sx={{ width: "100%", mb: 0, mt: 3 }}>
+      <Box sx={{ width: "100%", mb: 0, mt: 3, position: "relative" }}>
         <BorderLinearProgress variant="determinate" value={value} />
       </Box>
     </Grid>

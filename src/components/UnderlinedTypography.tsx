@@ -1,11 +1,14 @@
 "use client";
+
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import { colorValues } from "@/components/ThemeRegistry/colorValues";
 
-const UnderLinedTypography = styled(Typography)({
+const UnderLinedTypography = styled(Typography)(({ theme }) => ({
   textDecoration: "underline",
-  textDecorationColor: colorValues.tertiary.main,
-});
+  textDecorationColor:
+    theme.palette.mode == "dark"
+      ? theme.palette.tertiary.main
+      : theme.palette.tertiary.dark,
+}));
 
 export default UnderLinedTypography;

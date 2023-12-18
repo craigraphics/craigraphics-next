@@ -31,7 +31,7 @@ const Leadership = () => (
     <Typography variant="h4" sx={{ mb: 2, mt: 5 }}>
       <Highlight>Leadership and Team Collaboration</Highlight>
     </Typography>
-    <List sx={{ bgcolor: "background.paper" }} aria-label="contacts">
+    <List aria-label="contacts">
       {skills.map((skill) => (
         <ListItem disablePadding disableGutters dense key={skill.title}>
           <ListItemText sx={{ mb: 3 }}>

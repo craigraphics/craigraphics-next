@@ -1,5 +1,8 @@
 "use client";
+
 import React, { useState, FC } from "react";
+import { observer } from "mobx-react";
+import { themeStore } from "@/store/ThemeStore";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -11,7 +14,8 @@ import Box from "@mui/material/Box";
 import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { colorValues } from "../ThemeRegistry/colorValues";
+import { dark as themeColor } from "../ThemeRegistry/colorValues";
+import ThemeToggleButton from "../ThemeToggleButton";
 
 const Logo: FC<SvgIconProps> = (props) => (
   <SvgIcon
@@ -21,7 +25,7 @@ const Logo: FC<SvgIconProps> = (props) => (
   >
     <g>
       <circle
-        style={{ fill: colorValues.primary.light }}
+        style={{ fill: themeColor.primary.light }}
         cx="13"
         cy="13"
         r="5"
@@ -83,12 +87,13 @@ function appBarLabel(
         >
           <GitHubIcon />
         </IconButton>
+        <ThemeToggleButton />
       </Box>
     </Toolbar>
   );
 }
 
-export default function TopNav() {
+const TopNav: React.FC = observer(() => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -103,7 +108,10 @@ export default function TopNav() {
         enableColorOnDark
         sx={{
           backgroundImage: "none",
-          background: "rgba(18, 18, 18, 0.8)",
+          background:
+            themeStore.theme === "dark"
+              ? "rgba(18, 18, 18, 0.8)"
+              : "rgba(12, 43, 63, 0.8)",
           backdropFilter: "saturate(180%) blur(20px)",
           boxShadow: "none",
         }}
@@ -113,4 +121,6 @@ export default function TopNav() {
       <LeftNav onToggleMenu={toggleMenu} isOpen={menuOpen} />
     </>
   );
-}
+});
+
+export default TopNav;

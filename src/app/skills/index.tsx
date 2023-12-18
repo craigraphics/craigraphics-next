@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { observer } from "mobx-react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
@@ -10,7 +11,14 @@ import { styled } from "@mui/material/styles";
 import Container from "@mui/material/Container";
 
 import Highlight from "@/components/Hightlight";
-import SkillItem from "@/components/SkillItem";
+import SkillItem from "@/app/skills/SkillItem";
+import { themeStore } from "@/store/ThemeStore";
+
+import { hexToRgb } from "@/helpers/hexToRgb";
+import {
+  dark as darkTheme,
+  light as lightTheme,
+} from "@/components/ThemeRegistry/colorValues";
 
 const skillsList = [
   {
@@ -110,8 +118,9 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-const Skills = () => {
+const Skills: React.FC = observer(() => {
   const [expanded, setExpanded] = useState(false);
+  const theme = themeStore.theme === "dark" ? darkTheme : lightTheme;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -135,7 +144,11 @@ const Skills = () => {
           height: "100px",
           borderBottom: !expanded ? "1px solid rgb(31, 55, 93)" : "none",
           background: !expanded
-            ? "linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 100%)"
+            ? `linear-gradient(0deg, rgba(${hexToRgb(
+                theme.background.default,
+              )},0.9) 50%, rgba(${hexToRgb(
+                theme.background.default,
+              )},0.5) 100%)`
             : "transparent",
         }}
       >
@@ -156,6 +169,6 @@ const Skills = () => {
       </Container>
     </Box>
   );
-};
+});
 
 export default Skills;
