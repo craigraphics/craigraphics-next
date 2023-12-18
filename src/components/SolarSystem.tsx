@@ -1,6 +1,6 @@
 "use client";
 import { styled, keyframes } from "styled-components";
-import { colorValues } from "./ThemeRegistry/colorValues";
+import { dark as themeColor } from "./ThemeRegistry/colorValues";
 
 const Space = styled.div`
   margin: 0;
@@ -16,9 +16,9 @@ const Milkyway = styled.div`
 `;
 const Sun = styled.div`
   position: absolute;
-  background-color: ${colorValues.tertiary.main};
+  background-color: ${themeColor.tertiary.main};
   border-radius: 50%;
-  box-shadow: 0 0 3em ${colorValues.tertiary.main};
+  box-shadow: 0 0 3em ${themeColor.tertiary.main};
   top: 15em;
   left: 15em;
   height: 10em;
@@ -32,7 +32,7 @@ const orbit = keyframes`
 const Earth = styled.div`
   position: absolute;
   border-style: solid;
-  border-color: ${colorValues.secondary.light} transparent;
+  border-color: ${themeColor.secondary.light} transparent;
   border-width: 0.1em 0.1em 0 0;
   border-radius: 50%;
   top: 5em;
@@ -48,7 +48,7 @@ const Earth = styled.div`
     right: 2.8em;
     width: 3em;
     height: 3em;
-    background-color: ${colorValues.secondary.main};
+    background-color: ${themeColor.secondary.main};
   }
 `;
 const Moon = styled.div`

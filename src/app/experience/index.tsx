@@ -7,8 +7,8 @@ import PlaceIcon from "@mui/icons-material/Place";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import Highlight from "@/components/Hightlight";
+import CustomIcon from "@/components/CustomIcon";
 import UnderLinedTypography from "@/components/UnderlinedTypography";
-import { colorValues } from "@/components/ThemeRegistry/colorValues";
 
 const experienceList = [
   {
@@ -111,27 +111,24 @@ const Experience = () => {
           <Grid container key={title} spacing={2} sx={{ mb: 4 }}>
             <Grid sm={3} smOffset={1}>
               <Typography component="div">
-                <DateRangeIcon
-                  sx={{
-                    fontSize: 16,
-                    transform: "translateY(3px)",
-                    mr: 1,
-                    color: colorValues.tertiary.main,
-                  }}
+                <CustomIcon
+                  icon={DateRangeIcon}
+                  fontSize="16px"
+                  transform="translateY(3px)"
+                  mr={1}
                 />
                 {date}
               </Typography>
 
               {places.map((place) => (
                 <Typography component="div">
-                  <PlaceIcon
-                    sx={{
-                      fontSize: 16,
-                      transform: "translateY(3px)",
-                      mr: 1,
-                      color: colorValues.tertiary.main,
-                    }}
+                  <CustomIcon
+                    icon={PlaceIcon}
+                    fontSize="16px"
+                    transform="translateY(3px)"
+                    mr={1}
                   />
+
                   {place}
                 </Typography>
               ))}
@@ -139,14 +136,13 @@ const Experience = () => {
 
             <Grid sm={8}>
               <UnderLinedTypography variant="h5">
-                <WorkOutlineIcon
-                  sx={{
-                    fontSize: 20,
-                    transform: "translateY(3px)",
-                    mr: 1,
-                    color: colorValues.tertiary.main,
-                  }}
+                <CustomIcon
+                  icon={WorkOutlineIcon}
+                  fontSize="20px"
+                  transform="translateY(3px)"
+                  mr={1}
                 />
+
                 {title}
               </UnderLinedTypography>
               <Typography variant="h6" gutterBottom>

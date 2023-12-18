@@ -1,6 +1,6 @@
 import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
-import { colorValues } from "./colorValues";
+import { dark, light } from "./colorValues";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -8,10 +8,10 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const theme = createTheme({
+export const darkTheme = createTheme({
   palette: {
     mode: "dark",
-    ...colorValues,
+    ...dark,
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
@@ -46,7 +46,7 @@ const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: colorValues.secondary.main,
+          backgroundColor: dark.secondary.main,
           backgroundImage: "none",
           // color: "red",
         },
@@ -56,20 +56,20 @@ const theme = createTheme({
       styleOverrides: {
         outlined: {
           cursor: "default",
-          borderColor: colorValues.tertiary.main,
-          color: colorValues.secondary.light,
+          borderColor: dark.tertiary.main,
+          color: dark.secondary.light,
           "&:hover": {
-            backgroundColor: colorValues.tertiary.main,
+            backgroundColor: dark.tertiary.main,
             borderColor: "transparent",
             color: "black",
           },
         },
         filled: {
           cursor: "default",
-          backgroundColor: colorValues.secondary.dark,
-          color: colorValues.secondary.light,
+          backgroundColor: dark.secondary.dark,
+          color: dark.secondary.light,
           "&:hover": {
-            backgroundColor: colorValues.tertiary.main,
+            backgroundColor: dark.tertiary.main,
             borderColor: "transparent",
             color: "black",
           },
@@ -79,4 +79,62 @@ const theme = createTheme({
   },
 });
 
-export default theme;
+export const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    ...light,
+  },
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+    h2: {
+      fontWeight: 400,
+    },
+    h3: {
+      fontWeight: 300,
+    },
+    h4: {
+      fontWeight: 300,
+    },
+    h5: {
+      fontWeight: 400,
+    },
+    h6: {
+      fontWeight: 400,
+      lineHeight: 1.35,
+      letterSpacing: "0.00938em",
+    },
+  },
+  components: {
+    MuiAlert: {
+      styleOverrides: {
+        root: ({ ownerState }) => ({
+          ...(ownerState.severity === "info" && {
+            backgroundColor: "#60a5fa",
+          }),
+        }),
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: light.secondary.main,
+          backgroundImage: "none",
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        filled: {
+          cursor: "default",
+          backgroundColor: light.secondary.main,
+          color: light.primary.dark,
+          "&:hover": {
+            backgroundColor: light.tertiary.main,
+            borderColor: "transparent",
+            color: "white",
+          },
+        },
+      },
+    },
+  },
+});
