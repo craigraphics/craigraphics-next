@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 
 class ThemeStore {
-  theme = "light";
+  theme = "dark";
 
   constructor() {
     makeAutoObservable(this);
