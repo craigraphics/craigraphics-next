@@ -1,6 +1,6 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";
 import PlaceIcon from "@mui/icons-material/Place";
@@ -108,8 +108,15 @@ const Experience = () => {
       </Typography>
       {experienceList.map(
         ({ date, title, subtitle, technologies, places, content }) => (
-          <Grid container key={title} spacing={2} sx={{ mb: 4 }}>
-            <Grid sm={3} smOffset={1}>
+          <Grid container key={title} spacing={2} sx={{ mb: 4, ml: { xs: 0 } }}>
+            <Grid
+              sm={12}
+              md={3}
+              sx={{
+                ml: { xs: 0, sm: 0, md: 0 },
+                mr: 1,
+              }}
+            >
               <Typography component="div">
                 <CustomIcon
                   icon={DateRangeIcon}
@@ -121,7 +128,7 @@ const Experience = () => {
               </Typography>
 
               {places.map((place) => (
-                <Typography component="div">
+                <Typography component="div" key={place}>
                   <CustomIcon
                     icon={PlaceIcon}
                     fontSize="16px"
@@ -134,7 +141,7 @@ const Experience = () => {
               ))}
             </Grid>
 
-            <Grid sm={8}>
+            <Grid sm={12} md={8}>
               <UnderLinedTypography variant="h5">
                 <CustomIcon
                   icon={WorkOutlineIcon}
@@ -169,7 +176,6 @@ const Experience = () => {
           </Grid>
         ),
       )}
-      {/* </Grid> */}
     </>
   );
 };
