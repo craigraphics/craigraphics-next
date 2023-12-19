@@ -73,7 +73,7 @@ function appBarLabel(
           size="large"
           aria-label="Linkedin"
           color="inherit"
-          href="https://github.com/craigraphics"
+          href="https://www.linkedin.com/in/willcraigz/"
           target="_blank"
         >
           <LinkedInIcon />
@@ -82,7 +82,7 @@ function appBarLabel(
           size="large"
           aria-label="Github"
           color="inherit"
-          href="https://www.linkedin.com/in/willcraigz/"
+          href="https://github.com/craigraphics"
           target="_blank"
         >
           <GitHubIcon />

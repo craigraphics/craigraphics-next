@@ -15,13 +15,13 @@ const HomePage = () => (
       <Skills />
     </Grid>
 
-    <Grid sm={5} smOffset={2}>
+    <Grid lg={5} md={8} smOffset={2}>
       <Leadership />
       <EmailForm />
     </Grid>
     <Grid
-      sx={{ display: { xs: "none", sm: "none", md: "block" } }}
-      sm={3}
+      sx={{ display: { xs: "none", sm: "none", md: "none", lg: "block" } }}
+      lg={3}
       mt={5}
     >
       <SolarSystem />
