@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 
 const About = () => (
   <Box>
-    <Typography variant="h2" gutterBottom>
+    <Typography variant="h2" gutterBottom id="about">
       <Highlight>William Craig</Highlight>
     </Typography>
     <Typography variant="h3" gutterBottom sx={{ mb: 3, mt: 0 }}>

@@ -28,7 +28,7 @@ const skills = [
 
 const Leadership = () => (
   <>
-    <Typography variant="h4" sx={{ mb: 2, mt: 5 }}>
+    <Typography variant="h4" sx={{ mb: 2, mt: 5 }} id="leadership">
       <Highlight>Leadership and Team Collaboration</Highlight>
     </Typography>
     <List aria-label="contacts">
