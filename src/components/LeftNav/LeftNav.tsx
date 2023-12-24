@@ -20,17 +20,43 @@ interface LeftNavProps {
   isOpen: boolean;
 }
 
+const handleScroll = (
+  e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+): void => {
+  e.preventDefault();
+
+  const target = e.currentTarget as HTMLAnchorElement;
+  const href = target.getAttribute("href");
+  if (!href) return;
+
+  const targetId = href.replace(/.*#/, "");
+  const elem = document.getElementById(targetId);
+
+  if (elem) {
+    const elemPosition =
+      elem.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({
+      top: elemPosition,
+      behavior: "smooth",
+    });
+  }
+};
+
 const LeftNav: React.FC<LeftNavProps> = ({ onToggleMenu, isOpen }) => {
-  const toggleMenu = () => {
+  const toggleMenu = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ): void => {
+    e.preventDefault();
+    handleScroll(e);
     onToggleMenu();
   };
 
   const SECTIONS = [
-    { text: "About me", href: "/", icon: AccountCircleIcon },
-    { text: "Experience", href: "/#experience", icon: WorkHistoryIcon },
-    { text: "Skills", href: "/#skills", icon: ChecklistIcon },
-    { text: "Leadership", href: "/#leadership", icon: WorkspacesOutlinedIcon },
-    { text: "Contact", href: "/#contact", icon: AlternateEmailIcon },
+    { text: "About me", href: "#about", icon: AccountCircleIcon },
+    { text: "Experience", href: "#experience", icon: WorkHistoryIcon },
+    { text: "Skills", href: "#skills", icon: ChecklistIcon },
+    { text: "Leadership", href: "#leadership", icon: WorkspacesOutlinedIcon },
+    { text: "Contact", href: "#contact", icon: AlternateEmailIcon },
   ];
   return (
     <Drawer

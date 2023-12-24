@@ -108,7 +108,7 @@ const EmailForm: FC = observer(() => {
         </Snackbar>
       )}
 
-      <Typography variant="h4" component="h4" gutterBottom mt={5}>
+      <Typography variant="h4" component="h4" gutterBottom mt={5} id="contact">
         <Highlight>Lets connect!</Highlight>
       </Typography>
 

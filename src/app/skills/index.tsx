@@ -128,7 +128,7 @@ const Skills: React.FC = observer(() => {
 
   return (
     <Box sx={{ marginBottom: "100px" }}>
-      <Typography variant="h4" sx={{ mb: 1, mt: 5 }}>
+      <Typography variant="h4" sx={{ mb: 1, mt: 5 }} id="skills">
         <Highlight>Skills & Career Development </Highlight>
       </Typography>
 
