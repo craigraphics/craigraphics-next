@@ -14,7 +14,7 @@
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@fontsource/roboto": "^5.0.8",
-    "@mui/icons-material": "latest",
+    "@mui/icons-material": "5.15.1",
     "@mui/material": "latest",
     "@sendgrid/mail": "^8.1.0",
     "@types/react-google-recaptcha": "^2.1.8",
