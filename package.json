@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@emotion/cache": "latest",
-    "@emotion/react": "latest",
+    "@emotion/react": "11.11.3",
     "@emotion/styled": "latest",
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "latest",
